@@ -14,7 +14,7 @@ SELECT AVG(totalparagraphs) FROM work WHERE genretype = 't';
 SELECT title FROM work WHERE totalwords > (SELECT AVG(totalwords) FROM work);
 
 ### TASK 6;
-SELECT character.charname, speechcount, work.title FROM character LEFT JOIN character_work ON character.charid = character_work.charid LEFT JOIN work ON character_work.workid = work.workid
+SELECT character.charname, speechcount, work.title FROM character LEFT JOIN character_work ON character.charid = character_work.charid LEFT JOIN work ON character_work.workid = work.workid;
 
 ### TASK 7;
 SELECT ROUND(avg(speechcount)), work.title FROM character JOIN character_work ON character.charid = character_work.charid JOIN work ON character_work.workid = work.workid WHERE work.title = 'Romeo and Juliet' GROUP BY work.title;
